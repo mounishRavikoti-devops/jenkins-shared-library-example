@@ -6,7 +6,7 @@ def call(body){
 	body.delegate = config
     body()
 
-    def maven = tool "${MAVEN}";
+    def maven = tool "maven";
     print maven;
     stage("${config.name}"){
         sh "${maven}/bin/mvn ${config.action}"

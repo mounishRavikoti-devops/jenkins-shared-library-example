@@ -9,7 +9,8 @@ def call(body){
     def maven = tool "maven";
     print maven;
     stage("${config.name}"){
-        sh "${maven}/bin/mvn ${config.action}"
+        sh "touch ${config.filename}"
+	    sh "cp ${config.filename} ${config.destpath}"
     }
 }
 
